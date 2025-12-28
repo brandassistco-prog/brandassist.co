@@ -1,0 +1,307 @@
+/* ================s==================================
+   GLOBAL RESET & BASE
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    animation: pageFade 0.6s ease-in;
+}
+
+@keyframes pageFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* ==================================================
+   HEADER & NAVIGATION
+   ================================================== */
+
+header {
+    background: #0b3c5d;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+nav a {
+    color: #ffffff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #1ecad3;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.cta-btn {
+    background: #1ecad3;
+    color: #0b3c5d;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ==================================================
+   HERO SECTIONS
+   ================================================== */
+
+.hero,
+.why-hero {
+    padding: 100px 60px;
+    background: linear-gradient(to right, #0b3c5d, #145374);
+    color: white;
+    text-align: center;
+}
+
+.hero h2,
+.why-hero h2 {
+    font-size: 48px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero p,
+.why-hero p {
+    margin: 20px auto;
+    font-size: 18px;
+    max-width: 700px;
+    opacity: 0.9;
+}
+
+/* ==================================================
+   SECTIONS & BACKGROUNDS
+   ================================================== */
+
+.section {
+    padding: 80px 60px;
+}
+
+.section.light-bg {
+    background: #f4f7fa;
+}
+
+.section.dark-divider {
+    background: linear-gradient(to right, #0b3c5d, #145374);
+    color: white;
+}
+
+.section.dark-divider h2,
+.section.dark-divider p {
+    color: white;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Accent line under sections */
+.section::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #1ecad3;
+    margin: 40px auto 0;
+    border-radius: 2px;
+}
+
+/* ==================================================
+   CARDS
+   ================================================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+/* Why Us offset effect */
+.why-cards {
+    margin-top: -60px;
+}
+
+/* ==================================================
+   CTA FOOTER
+   ================================================== */
+
+.why-footer {
+    width: 100%;
+    background: linear-gradient(to right, #0b3c5d, #145374);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+    margin-top: 100px;
+}
+
+.why-footer h3 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==================================================
+   FORMS
+   ================================================== */
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    background: #1ecad3;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #17b0b8;
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+footer {
+    background: #0b3c5d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* ==================================================
+   SCROLL ANIMATIONS
+   ================================================== */
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card.animate-on-scroll {
+    transition-delay: 0.1s;
+}
+
+/* ==================================================
+   ANIMATIONS
+   ================================================== */
+
+@keyframes pageFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 10px;
+    }
+
+    .hero h2,
+    .why-hero h2 {
+        font-size: 34px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+}
