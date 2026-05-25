@@ -72,3 +72,50 @@
         Request a Callback
     </a>
 </section>
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:#102d45;
+    padding:25px;
+    border-radius:18px;
+    transition:0.3s ease;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(0,195,255,0.3);
+}
+
+.card h3{
+    color:white;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#d6e4f0;
+    line-height:1.6;
+}
+
+.icon{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.why-hero{
+    padding:100px 20px;
+    text-align:center;
+    background:#0b3a5b;
+    color:white;
+}
+
+.why-footer{
+    text-align:center;
+    padding:70px 20px;
+}
