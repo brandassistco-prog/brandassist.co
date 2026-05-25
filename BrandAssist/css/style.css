@@ -191,11 +191,7 @@ footer{
     padding:25px;
 }
 
-/* ANIMATION */
-
-.animate-on-scroll{
-    opacity:1;
-    transform:none;
+/* 
 }
 
 /* MOBILE */
@@ -245,6 +241,26 @@ footer{
 
     .section p{
         font-size:18px;
-    }
+    /* FLOATING ANIMATION */
+
+.animate-on-scroll{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.8s ease;
+}
+
+.animate-on-scroll.animate{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card{
+    transition:all 0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
 
 }
