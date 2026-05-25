@@ -1,3 +1,4 @@
+
 // Scroll animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -13,10 +14,25 @@ document.querySelectorAll(".animate-on-scroll").forEach(el => {
 
 // Form submit UX
 const form = document.querySelector("form");
+
 if (form) {
     form.addEventListener("submit", () => {
+
         const btn = form.querySelector("button");
+
         btn.innerText = "Submitting...";
         btn.disabled = true;
+
     });
+}
+
+// HAMBURGER MENU
+
+function toggleMenu(){
+
+    document
+    .getElementById("mobileMenu")
+    .classList
+    .toggle("active");
+
 }
