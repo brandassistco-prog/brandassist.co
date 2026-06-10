@@ -1,307 +1,207 @@
-/* ================s==================================
-   GLOBAL RESET & BASE
-   ================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
-body {
-    animation: pageFade 0.6s ease-in;
+body{
+background:#050505;
+color:#ffffff;
+animation:pageFade .6s ease-in;
 }
 
-@keyframes pageFade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes pageFade{
+from{opacity:0;}
+to{opacity:1;}
 }
 
-
-/* ==================================================
-   HEADER & NAVIGATION
-   ================================================== */
-
-header {
-    background: #0b3c5d;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+header{
+background:#0a0a0a;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid rgba(255,107,0,.2);
 }
 
-header h1 {
-    color: #ffffff;
-    font-size: 24px;
+header h1{
+color:#ff6b00;
+font-size:28px;
+font-weight:700;
 }
 
-nav a {
-    color: #ffffff;
-    margin-left: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
+nav a{
+color:#ffffff;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+position:relative;
 }
 
-nav a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #1ecad3;
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s ease;
+nav a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:#ff6b00;
+left:0;
+bottom:-5px;
+transition:.3s;
 }
 
-nav a:hover::after {
-    width: 100%;
+nav a:hover::after{
+width:100%;
 }
 
-.cta-btn {
-    background: #1ecad3;
-    color: #0b3c5d;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.cta-btn{
+background:#ff6b00;
+color:white;
+padding:12px 22px;
+border-radius:6px;
+font-weight:bold;
+transition:.3s;
 }
 
-.cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.cta-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 25px rgba(255,107,0,.4);
 }
 
-/* ==================================================
-   HERO SECTIONS
-   ================================================== */
-
-.hero,
-.why-hero {
-    padding: 100px 60px;
-    background: linear-gradient(to right, #0b3c5d, #145374);
-    color: white;
-    text-align: center;
+.hero{
+padding:120px 40px;
+text-align:center;
+background:linear-gradient(135deg,#050505,#1a1a1a);
 }
 
-.hero h2,
-.why-hero h2 {
-    font-size: 48px;
-    max-width: 900px;
-    margin: auto;
+.hero h2{
+font-size:52px;
+max-width:900px;
+margin:auto;
+margin-bottom:20px;
 }
 
-.hero p,
-.why-hero p {
-    margin: 20px auto;
-    font-size: 18px;
-    max-width: 700px;
-    opacity: 0.9;
+.hero p{
+font-size:20px;
+max-width:750px;
+margin:auto;
+color:#cfcfcf;
 }
 
-/* ==================================================
-   SECTIONS & BACKGROUNDS
-   ================================================== */
-
-.section {
-    padding: 80px 60px;
+.section{
+padding:90px 40px;
 }
 
-.section.light-bg {
-    background: #f4f7fa;
+.section.light-bg{
+background:#111111;
 }
 
-.section.dark-divider {
-    background: linear-gradient(to right, #0b3c5d, #145374);
-    color: white;
+.section h2{
+text-align:center;
+font-size:40px;
+margin-bottom:25px;
+color:#ff6b00;
 }
 
-.section.dark-divider h2,
-.section.dark-divider p {
-    color: white;
+.section p{
+max-width:850px;
+margin:auto;
+text-align:center;
+line-height:1.8;
+color:#d0d0d0;
 }
 
-.section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-align: center;
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:40px;
 }
 
-.section p {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 40px;
+.card{
+background:#111111;
+padding:30px;
+border-radius:12px;
+border:1px solid rgba(255,107,0,.2);
+transition:.3s;
+text-align:center;
 }
 
-/* Accent line under sections */
-.section::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #1ecad3;
-    margin: 40px auto 0;
-    border-radius: 2px;
+.card:hover{
+transform:translateY(-8px);
+border-color:#ff6b00;
+box-shadow:0 0 25px rgba(255,107,0,.15);
 }
 
-/* ==================================================
-   CARDS
-   ================================================== */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+.card h3{
+color:#ff6b00;
+margin-bottom:15px;
 }
 
-.card {
-    background: #ffffff;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+.card p{
+color:#d0d0d0;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 22px;
-}
-
-.icon {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-/* Why Us offset effect */
-.why-cards {
-    margin-top: -60px;
-}
-
-/* ==================================================
-   CTA FOOTER
-   ================================================== */
-
-.why-footer {
-    width: 100%;
-    background: linear-gradient(to right, #0b3c5d, #145374);
-    color: white;
-    text-align: center;
-    padding: 90px 20px;
-    margin-top: 100px;
-}
-
-.why-footer h3 {
-    font-size: 30px;
-    margin-bottom: 25px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ==================================================
-   FORMS
-   ================================================== */
-
-form {
-    max-width: 500px;
-    margin: auto;
+form{
+max-width:600px;
+margin:auto;
 }
 
 form input,
-form textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+form textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+background:#0f0f0f;
+border:1px solid rgba(255,255,255,.1);
+color:white;
+border-radius:6px;
 }
 
-form button {
-    width: 100%;
-    background: #1ecad3;
-    border: none;
-    padding: 14px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
+form button{
+width:100%;
+padding:15px;
+background:#ff6b00;
+border:none;
+color:white;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
 }
 
-form button:hover {
-    background: #17b0b8;
+footer{
+background:#0a0a0a;
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,107,0,.2);
 }
 
-/* ==================================================
-   FOOTER
-   ================================================== */
-
-footer {
-    background: #0b3c5d;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
+footer p{
+margin:10px 0;
+color:#d0d0d0;
 }
 
-/* ==================================================
-   SCROLL ANIMATIONS
-   ================================================== */
+@media(max-width:768px){
 
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+header{
+flex-direction:column;
+gap:15px;
+padding:20px;
 }
 
-.animate-on-scroll.animate {
-    opacity: 1;
-    transform: translateY(0);
+.hero h2{
+font-size:34px;
 }
 
-.card.animate-on-scroll {
-    transition-delay: 0.1s;
+.section{
+padding:60px 20px;
 }
 
-/* ==================================================
-   ANIMATIONS
-   ================================================== */
-
-@keyframes pageFade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+nav a{
+margin:8px;
 }
 
-/* ==================================================
-   RESPONSIVE
-   ================================================== */
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    nav a {
-        margin: 10px;
-    }
-
-    .hero h2,
-    .why-hero h2 {
-        font-size: 34px;
-    }
-
-    .section {
-        padding: 60px 20px;
-    }
 }
